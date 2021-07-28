@@ -6,6 +6,7 @@ import android.app.TabActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 public class MainActivity extends TabActivity {
 
@@ -42,6 +43,9 @@ public class MainActivity extends TabActivity {
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
+                TextView tp =(TextView)tabHost.getCurrentTabView().findViewById(android.R.id.title);
+                tp.setTextColor(Color.parseColor("#000000"));
+
                 for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
                     tabHost.getTabWidget().getChildAt(i)
                             .setBackgroundColor(Color.parseColor("#FFFFD2")); // unselected
@@ -49,8 +53,8 @@ public class MainActivity extends TabActivity {
 
                 tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab())
                         .setBackgroundColor(Color.parseColor("#FAED7D")); // selected
-
             }
+
         });
 
     }
