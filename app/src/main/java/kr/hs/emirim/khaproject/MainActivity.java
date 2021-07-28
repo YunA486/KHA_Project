@@ -39,10 +39,6 @@ public class MainActivity extends TabActivity {
             tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFFFD2"));
         }
 
-        for (int tab = 0; tab < tabHost.getTabWidget().getChildCount(); ++tab){
-            tabHost.getTabWidget().getChildAt(tab).getLayoutParams().height = 200;
-        }
-
     }
 
 }
